@@ -1,3 +1,9 @@
+@kalki
+@global
+
+bg_color = ['red', 'green', 'blue', 'purple', 'orange', 'black']
+
+@kalki
 * {
     padding: auto;
 }
@@ -11,18 +17,18 @@ for i in range(5):
   @addkalki
 @kalki
 
-div {
-    background-color: green;
-}
-
-.m-t {
-    margin-top: 50px;
-}
 @kalki
-for i in range(5):
+for color in bg_color:
   style = @css
-  .pt-{i} ${
-    padding-top: {i}em;
+  .bg-{color} ${
+    background-color: {color};
+  }$
+  @end
+  @addkalki
+for color in bg_color:
+  style = @css
+  .text-{color} ${
+    color: {color};
   }$
   @end
   @addkalki

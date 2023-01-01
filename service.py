@@ -1,12 +1,23 @@
 file = open('kalki.pycss')
-content = file.read()
+kalki_content = file.read()
 file.close()
 
-list_content = content.split('@kalki')
+kalki_list_content = kalki_content.split('@kalki')
+
+kalki_global = ''
+
+for i in kalki_list_content:
+    a = i.strip()
+    if a.startswith('@global'):
+        a = a.replace('@global', '')
+        kalki_global = a
+        kalki_list_content.remove(i)
+
+exec(kalki_global)
 
 kalkicss = ""
 
-for i in list_content:
+for i in kalki_list_content:
     a = len(i.split('@css'))
     if a > 1:
         code = i.replace('@css', 'f"""')
@@ -24,7 +35,7 @@ for i in list_content:
     kalkicss += i;
 kalkicss = kalkicss.replace(' ', '')
 
-created_css = open('styles/kalki.css', 'w')
-created_css.write(kalkicss)
-created_css.close()
+kalki_created_css = open('styles/kalki.css', 'w')
+kalki_created_css.write(kalkicss)
+kalki_created_css.close()
 exec(open("kalkiminify.py").read())
