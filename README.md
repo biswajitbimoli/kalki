@@ -1,30 +1,40 @@
-# kalki
-<div>
-    <P>Kalki is a CSS syntax enhancement tool build in python</P>
-</div>
-<h1>Here is the guide to working through it</h1>
 
-<div>
-    <h2>Installation</h2>
-    <p>
-        You can download latest version from the github or clone it. <a href="https://github.com/biswajitbimoli/kalki.git">Github Link.</a>
-    </p>
-    <h2>This is how Our file system Works</h2>
-    <img src="./img/filesystem.png" alt="" width="100%">
-    <p>
-        Here you can see we have, kalki.pycss, service.py and kalkiminify.py files mainly.
-    </p>
-    <h4>kalki.pycss</h4>
-    <p>
-        kalki.pycss is the main file where we will be writing our css code, or more precisely css code with enhanced features.
-    </p>
-    <h4>service.py</h4>
-    <p>This is the main file which compiles .pycss files to Browser readable .css file</p>
-    <h4>kalkiminify.py</h4>
-    <p>
-        This file minifies css code that is compiled from kalki.pycss
-    </p>
-    <p style="color: red; font-style: oblique;">
-        Till the time you will need to have exact kalki.pycss name of your .pycss file to compile it to css
-    </p>
-</div>
+# Kalki
+
+Kalki is a CSS syntax enhancement tool build in python
+
+
+## Here is the guide to working through it
+
+
+
+
+## Installation
+
+You can download latest version from the github or clone it.
+    
+## This is how Our file system Works
+
+
+
+
+
+
+
+![Screenshot from 2023-01-01 21-56-00](https://user-images.githubusercontent.com/46971615/210178899-e5c66ffd-a470-40aa-8e62-da2d050cbb24.png)
+
+Here you can see we have, kalki.pycss, service.py and kalkiminify.py files mainly.
+
+## kalki.pycss
+
+kalki.pycss is the main file where we will be writing our css code, or more precisely css code with enhanced features.
+
+## service.py
+
+This is the main file which compiles .pycss files to Browser readable .css file
+
+## kalkiminify.py
+
+This file minifies css code that is compiled from kalki.pycss
+
+Till the time you will need to have exact kalki.pycss name of your .pycss file to compile it to css
