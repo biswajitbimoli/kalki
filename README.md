@@ -10,7 +10,7 @@
         You can download latest version from the github or clone it. <a href="https://github.com/biswajitbimoli/kalki.git">Github Link.</a>
     </p>
     <h2>This is how Our file system Works</h2>
-    <img src="./img/filesystem.jpg" alt="" width="50%">
+    <img src="./img/filesystem.png" alt="" width="100%">
     <p>
         Here you can see we have, kalki.pycss, service.py and kalkiminify.py files mainly.
     </p>
