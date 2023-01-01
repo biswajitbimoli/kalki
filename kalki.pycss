@@ -2,11 +2,13 @@
 @global
 
 bg_color = ['red', 'green', 'blue', 'purple', 'orange', 'black']
+text_size = [50, 75, 100, 125, 150, 200]
 
 @kalki
 * {
     padding: auto;
 }
+
 @kalki
 for i in range(5):
   style = @css
@@ -29,6 +31,16 @@ for color in bg_color:
   style = @css
   .text-{color} ${
     color: {color};
+  }$
+  @end
+  @addkalki
+@kalki
+
+@kalki
+for size in text_size:
+  style = @css 
+  .t-{size} ${
+    font-size: {size}%;
   }$
   @end
   @addkalki
