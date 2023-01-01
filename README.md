@@ -38,3 +38,62 @@ This is the main file which compiles .pycss files to Browser readable .css file
 This file minifies css code that is compiled from kalki.pycss
 
 Till the time you will need to have exact kalki.pycss name of your .pycss file to compile it to css
+
+## Syntax
+### kalki.pycss follows following syntax rules
+.pycss syntax is as same as .css syntax but with python code integration. You can write .css code in .pycss as well, it just extends more features with python code between two @kalki tag.
+
+```python/css
+* {
+    padding: auto;
+}
+.container {
+  width: 600px;
+  height: 800px;
+}
+@kalki
+for i in range(5):
+  style = @css
+  .mt-{i} ${
+    margin-top: {i}em;
+  }$
+  @end
+  @addkalki
+@kalki
+```
+Here you can see in first two code, it is pure css and bellow that we have python code(with little bit of modification) between @kalki tags
+
+#### @kalki
+@kalki tag is very important for out compiler to understand that it is a .pycss enhanced css code and has to be compiled in order to make it browser readable. without this tag at the start and at the end, the code is supposed to be plain string by the compiler.
+
+```python/css
+@kalki
+for i in range(5):
+  style = @css
+  .mt-{i} ${
+    margin-top: {i}em;
+  }$
+  @end
+  @addkalki
+@kalki
+```
+
+inside python code you see we have css code assigned to style variable. This style variable is also very important and all the css code needs to be assigned to this variable. This variable will be added to the compiled .css file.
+
+All the css codes are written between the @css and @end tag. It is neccessary parameters, compiler listens to these tags and decides that the code between these two tags are the main css codes.
+
+{}, curly braces are used to insert dynamic values in the code.
+
+And we have ${}$ which replaces traditional css curly braces
+```python/css
+* {
+    padding: auto;
+}
+.container {
+  width: 600px;
+  height: 800px;
+}
+```
+This is due to the {}, curly braces which we use to insert dynamic value, so we can not use this braces for other purpose.
+
+And at last we have @addkalki tag, which is required to add at the last with proper indentation. this tag allows compiler to add the given dynamic .pycss code to compiled .css file.
