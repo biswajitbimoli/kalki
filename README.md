@@ -21,7 +21,7 @@ You can download latest version from the github or clone it.
 
 
 
-![Screenshot from 2023-01-01 21-56-00](https://user-images.githubusercontent.com/46971615/210178899-e5c66ffd-a470-40aa-8e62-da2d050cbb24.png)
+![WhatsApp Image 2023-01-02 at 10 31 54 AM](https://user-images.githubusercontent.com/46971615/210196467-24869fe0-a541-49b4-b64e-68b4d5f2c4b3.jpeg)
 
 Here you can see we have, kalki.kalki, service.py and kalkiminify.py files mainly.
 
