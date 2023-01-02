@@ -1,9 +1,8 @@
 import os
-import settings
+import kalki.settings as settings
 import sys
 
 path = settings.kalki_path
-print(path)
 
 
 def startapp():

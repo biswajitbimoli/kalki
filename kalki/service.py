@@ -1,6 +1,6 @@
 import os
 import re
-import settings
+import kalki.settings as settings
 
 styles_path = settings.styles_path
 output_path = settings.output_path
