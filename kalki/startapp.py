@@ -1,16 +1,15 @@
 import os
+import settings
 
-BASE_DIR = os.getcwd()
-
-kalki_path = os.path.join(BASE_DIR, 'styles')
+path = settings.styles_path
 
 try:
-    os.mkdir(kalki_path)
+    os.mkdir(path)
 except FileExistsError:
     print("Directory 'styles' already created.")
     print("Trying to create required files")
 
-create_kalki_file = open(os.path.join(kalki_path, 'kalki.kalki'), 'w')
+create_kalki_file = open(os.path.join(path, 'kalki.kalki'), 'w')
 kalki_content = """@kalki
 @global
 
