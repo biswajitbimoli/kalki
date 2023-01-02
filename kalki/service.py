@@ -20,6 +20,9 @@ if count1 != count2:
     else:
         print("You might have extra @endkalki tag, please remove it to compile the code")
     sys.exit()
+if kalki_content.count('@global') > 1:
+    print("You have added @global keyword twice, you can use only one @global keyword")
+    sys.exit()
 
 kalki_list_content = re.split(r'@kalki|@endkalki', kalki_content)
 
