@@ -1,4 +1,4 @@
-file = open('kalki.pycss')
+file = open('kalki.kalki')
 kalki_content = file.read()
 file.close()
 
