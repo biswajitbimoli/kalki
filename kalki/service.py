@@ -6,7 +6,7 @@ styles_path = settings.styles_path
 output_path = settings.output_path
 kalki_path = settings.kalki_path
 
-file = open(os.path.join(styles_path, 'kalki.kalki'))
+file = open(os.path.join(styles_path, settings.dot_kalki))
 kalki_content = file.read()
 file.close()
 
@@ -51,7 +51,7 @@ except FileExistsError:
     print("Directory 'output' already created.")
     print("Trying to create compiled css files")
 
-kalki_created_css = open(os.path.join(output_path, 'kalki.css'), 'w')
+kalki_created_css = open(os.path.join(output_path, settings.dot_css), 'w')
 kalki_created_css.write(kalkicss)
 kalki_created_css.close()
 print('kalki.css file created successfully')

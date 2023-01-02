@@ -9,7 +9,7 @@ except FileExistsError:
     print("Directory 'styles' already created.")
     print("Trying to create required files")
 
-create_kalki_file = open(os.path.join(path, 'kalki.kalki'), 'w')
+create_kalki_file = open(os.path.join(path, settings.dot_kalki), 'w')
 kalki_content = """@kalki
 @global
 
