@@ -1,4 +1,5 @@
 import os
+import sys
 import kalki.settings as settings
 
 path = settings.styles_path
@@ -8,8 +9,12 @@ try:
 except FileExistsError:
     print("Directory 'styles' already created.")
     print("Trying to create required files")
-
-create_kalki_file = open(os.path.join(path, settings.dot_kalki), 'w')
+file_name = os.path.join(path, settings.dot_kalki)
+if os.path.exists(file_name):
+  print('working directory and required file is already created')
+  sys.exit()
+  
+create_kalki_file = open(file_name, 'w')
 kalki_content = """@kalki
 @global
 

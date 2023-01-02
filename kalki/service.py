@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import kalki.settings as settings
 
 styles_path = settings.styles_path
@@ -9,6 +10,12 @@ kalki_path = settings.kalki_path
 file = open(os.path.join(styles_path, settings.dot_kalki))
 kalki_content = file.read()
 file.close()
+
+count = kalki_content.count('@kalki')
+
+if count%2 != 0:
+    print("You might have left a @kalki tag openned, please close it to compile the code")
+    sys.exit()
 
 kalki_list_content = kalki_content.split('@kalki')
 
