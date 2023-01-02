@@ -20,7 +20,7 @@ kalki_content = """@kalki
 
 colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 
-@kalki
+@endkalki
 
 
 * {
@@ -29,20 +29,18 @@ colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 
 @kalki
 for color in colors:
-  style = @css
+  @css
   .bg-{color} ${
     background-color: {color};
   }$
-  @end
-  @addkalki
+  @endcss
 for color in colors:
-  style = @css
+  @css
   .text-{color} ${
     color: {color};
   }$
-  @end
-  @addkalki
-@kalki
+  @endcss
+@endkalki
 """
 create_kalki_file.write(kalki_content)
 create_kalki_file.close()

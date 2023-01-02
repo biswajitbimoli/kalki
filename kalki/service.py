@@ -11,13 +11,17 @@ file = open(os.path.join(styles_path, settings.dot_kalki))
 kalki_content = file.read()
 file.close()
 
-count = kalki_content.count('@kalki')
+count1 = kalki_content.count('@kalki')
+count2 = kalki_content.count('@endkalki')
 
-if count%2 != 0:
-    print("You might have left a @kalki tag openned, please close it to compile the code")
+if count1 != count2:
+    if count1 > count2:
+        print("You might have left a @kalki tag openned, please close it with @endkalki to compile the code")
+    else:
+        print("You might have extra @endkalki tag, please remove it to compile the code")
     sys.exit()
 
-kalki_list_content = kalki_content.split('@kalki')
+kalki_list_content = re.split(r'@kalki|@endkalki', kalki_content)
 
 kalki_global = ''
 
@@ -36,11 +40,11 @@ kalkicss = ""
 for i in kalki_list_content:
     a = len(i.split('@css'))
     if a > 1:
-        code = i.replace('@css', 'f"""')
-        code = code.replace('@end', '"""')
+        code = i.replace('@css', 'style = f"""')
+        code = code.replace('@endcss', '"""; @endcss')
         code = code.replace('${', '{{')
         code = code.replace('}$', '}}')
-        code = code.replace('@addkalki', "css.append(style)")
+        code = code.replace('@endcss', "css.append(style)")
         css = []
         css_all = ""
         code_exec = exec(code)
