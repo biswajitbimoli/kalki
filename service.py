@@ -1,4 +1,8 @@
-file = open('kalki.kalki')
+import os
+
+BASE_DIR = os.getcwd()
+
+file = open(os.path.join(BASE_DIR, 'styles/kalki.kalki'))
 kalki_content = file.read()
 file.close()
 
@@ -35,7 +39,18 @@ for i in kalki_list_content:
     kalkicss += i;
 kalkicss = kalkicss.replace(' ', '')
 
-kalki_created_css = open('styles/kalki.css', 'w')
+
+kalki_path = os.path.join(BASE_DIR, 'output')
+
+try:
+    os.mkdir(kalki_path)
+except FileExistsError:
+    print("Directory 'output' already created.")
+    print("Trying to create compiled css files")
+
+kalki_created_css = open(os.path.join(kalki_path, 'kalki.css'), 'w')
 kalki_created_css.write(kalkicss)
 kalki_created_css.close()
 exec(open("kalkiminify.py").read())
+
+print('kalki.css and kalki.min.css files created successfully')
