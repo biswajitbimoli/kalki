@@ -46,4 +46,4 @@ for color in colors:
 """
 create_kalki_file.write(kalki_content)
 create_kalki_file.close()
-print('kalki.kalki file created successfully')
+print(f"{settings.dot_kalki} file created successfully in 'styles' subdirectory inside the main app")

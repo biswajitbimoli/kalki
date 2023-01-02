@@ -15,4 +15,4 @@ for i in new:
 created_css = open(os.path.join(output_path, settings.dot_min_css), 'w')
 created_css.write(kalkicss)
 created_css.close()
-print("kalki.min.css file created successfully")
+print(f"{settings.dot_min_css} file created successfully in 'output' subdirectory inside the main app")

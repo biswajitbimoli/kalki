@@ -61,6 +61,6 @@ except FileExistsError:
 kalki_created_css = open(os.path.join(output_path, settings.dot_css), 'w')
 kalki_created_css.write(kalkicss)
 kalki_created_css.close()
-print('kalki.css file created successfully')
+print(f"{settings.dot_css} file created successfully in 'output' subdirectory inside the main app")
 exec(open(os.path.join(kalki_path, "kalkiminify.py")).read())
 
