@@ -55,6 +55,9 @@ for i in kalki_list_content:
             s = l.strip()
             css_all += '\n' + s
             i = css_all
+    else:
+        i = i.replace('#', '/*')
+        i = i.replace('$', '*/')
     kalkicss += i;
 kalkicss = kalkicss.replace(' ', '')
 kalkicss = re.sub(r'\n\s*\n','\n',kalkicss,re.MULTILINE)

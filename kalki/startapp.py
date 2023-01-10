@@ -30,15 +30,15 @@ colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 @kalki
 for color in colors:
   @css
-  .bg-{color} ${
+  .bg-{color} {{
     background-color: {color};
-  }$
+  }}
   @endcss
 for color in colors:
   @css
-  .text-{color} ${
+  .text-{color} {{
     color: {color};
-  }$
+  }}
   @endcss
 @endkalki
 """

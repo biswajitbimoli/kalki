@@ -1,4 +1,5 @@
 import os
+import re
 import kalki.settings as settings
 
 output_path = settings.output_path
@@ -8,6 +9,7 @@ file.close()
 
 kalkicss = ""
 new = content.replace(' ', '')
+# new = re.sub(r'^/\*.\*/$', '', new)
 new = new.split();
 for i in new:
     kalkicss += i
