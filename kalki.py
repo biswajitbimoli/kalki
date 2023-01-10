@@ -1,7 +1,7 @@
 import os
 import kalki.settings as settings
 import sys
-
+from kalki import service, kalkiminify
 path = settings.kalki_path
 
 
@@ -9,10 +9,10 @@ def startapp():
     exec(open(os.path.join(path, "startapp.py")).read())
 
 def compile():
-    exec(open(os.path.join(path, "service.py")).read())
+    service.service()
 
 def minify():
-    exec(open(os.path.join(path, "kalkiminify.py")).read())
+    kalkiminify.kalkiminify()
 
 if __name__ == '__main__':
     try:
