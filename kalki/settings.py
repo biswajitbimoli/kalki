@@ -11,5 +11,4 @@ dot_min_css = 'kalki-compiled.min.css'
 
 APP_NAME = [
     'app',
-    'newfile',
 ]

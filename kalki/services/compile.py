@@ -21,17 +21,17 @@ class Compile(global_var.GlobalVar):
                 code = code.replace('@endcss', "css.append(style)")
                 css = []
                 css_all = ""
-                code_exec = exec(code)
+                exec(code)
                 for l in css:
                     s = l.strip()
                     css_all += '\n' + s
                     i = css_all
-            else:
-                i = i.replace('#', '/*')
-                i = i.replace('$', '*/')
+
             self.kalkicss += i;
         self.kalkicss = self.kalkicss.replace(' ', '')
+        self.kalkicss = re.sub(r'\#.+','', self.kalkicss, re.MULTILINE)
         self.kalkicss = re.sub(r'\n\s*\n','\n',self.kalkicss,re.MULTILINE)
+        
     
     def write_css_file(self):
         try:
