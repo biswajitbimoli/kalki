@@ -1,7 +1,7 @@
-from kalki.services.compile import Compile
+from kalki.services import compile, global_var
 from kalki import kalkiminify
 
 def service():
-    Compile().compile()
+    compile.Compile().compile()
     kalkiminify.kalkiminify()
 

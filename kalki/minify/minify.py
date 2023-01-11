@@ -27,6 +27,7 @@ class Minify:
         created_css.close()
         print(f"{settings.dot_min_css} file created successfully in 'output' subdirectory inside the main app")
 
+    # executes all minify functions
     def minify(self):
         self.read_css()
         self.remove_spaces()
