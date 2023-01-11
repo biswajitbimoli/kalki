@@ -4,8 +4,9 @@ import kalki.settings as settings
 
 
 class StartApp:
-    def __init__(self):
+    def __init__(self, appname):
         self.path = settings.styles_path
+        self.appname = appname + '.kalki'
 
     def create_kalki_file(self):
         try:
@@ -13,7 +14,7 @@ class StartApp:
         except FileExistsError:
             print("Directory 'styles' already created.")
             print("Trying to create required files")
-        file_name = os.path.join(self.path, settings.dot_kalki)
+        file_name = os.path.join(self.path, self.appname)
         
         try:
             create_kalki_file = open(file_name, 'x')
@@ -49,4 +50,4 @@ for color in colors:
 """
         create_kalki_file.write(kalki_content)
         create_kalki_file.close()
-        print(f"{settings.dot_kalki} file created successfully in 'styles' subdirectory inside the main app")
+        print(f"{self.appname} file created successfully in 'styles' subdirectory inside the main app")

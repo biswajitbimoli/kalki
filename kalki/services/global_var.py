@@ -3,21 +3,31 @@ import os
 import sys
 import re
 
+app_name = sys.argv[2]
 kalki_global = ''
-
+print(app_name)
 class GlobalVar:
-    def __init__(self):
+    def __init__(self, appname):
+        self.app = appname
+        self.appname = appname + '.kalki'
+        self.css_filename = appname + '-compiled.css'
         self.styles_path = settings.styles_path
         self.output_path = settings.output_path
         self.kalki_path = settings.kalki_path
         self.kalki_content = ''
         self.kalki_list_content = ''
         self.kalkicss = ""
+    
 
     def open_kalki_file(self):
-        file = open(os.path.join(self.styles_path, settings.dot_kalki))
-        self.kalki_content = file.read()
-        file.close()
+        try:
+            file = open(os.path.join(self.styles_path, self.appname))
+            self.kalki_content = file.read()
+            file.close()
+        except FileNotFoundError:
+            print(f'{self.appname} do not exists.')
+            print(f"Run startapp {self.app} to create {self.appname}")
+            sys.exit()
         self.kalki_list_content = re.split(r'@kalki|@endkalki', self.kalki_content)
 
     def check_kalki_syntax(self):
@@ -47,4 +57,4 @@ class GlobalVar:
                 self.kalki_list_content.remove(i)
         
         
-GlobalVar().exec_kalki_global()
+GlobalVar(app_name).exec_kalki_global()

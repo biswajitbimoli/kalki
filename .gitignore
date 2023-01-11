@@ -3,3 +3,4 @@ __pycache__/*
 styles/*
 output/*
 kalki/__pycache__/*
+*/__pycache__/*

@@ -5,6 +5,7 @@ import re
 from kalki.services import global_var
 
 exec(global_var.kalki_global)
+
 class Compile(global_var.GlobalVar):
 
 
@@ -39,10 +40,10 @@ class Compile(global_var.GlobalVar):
             print("Directory 'output' already created.")
             print("Trying to create compiled css files")
 
-        kalki_created_css = open(os.path.join(self.output_path, settings.dot_css), 'w')
+        kalki_created_css = open(os.path.join(self.output_path, self.css_filename), 'w')
         kalki_created_css.write(self.kalkicss)
         kalki_created_css.close()
-        print(f"{settings.dot_css} file created successfully in 'output' subdirectory inside the main app")
+        print(f"{self.css_filename} file created successfully in 'output' subdirectory inside the main app")
 
     def compile(self):
         self.exec_kalki_global()

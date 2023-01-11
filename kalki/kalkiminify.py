@@ -1,5 +1,5 @@
 from kalki.minify.minify import Minify
 
-def kalkiminify():
-    Minify().minify()
+def kalkiminify(appname):
+    Minify(appname).minify()
 

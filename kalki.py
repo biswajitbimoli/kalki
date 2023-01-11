@@ -1,14 +1,15 @@
 import os
 import kalki.settings as settings
 import sys
+from kalki import service
 try:
     from kalki import kalkiminify
 except:
     pass
-try:
-    from kalki import service
-except:
-    pass
+# try:
+#     from kalki import service
+# except:
+#     pass
 try:
     from kalki import create_app
 except:
@@ -18,14 +19,34 @@ except:
 path = settings.kalki_path
 
 
+
+try:
+    appname = sys.argv[2]
+except:
+    print('provide a appname')
+def check_appname():
+    for app in settings.APP_NAME:
+        if app == appname:
+            return True
+
+
 def startapp():
-    create_app.startapp()
+    create_app.startapp(appname)
 
 def compile():
-    service.service()
+    if check_appname():
+        service.service(appname)
+    else:
+        print('Appname do not exists.')
+        print("If the app exists, add the app to APP_NAME in settings.py")
+    
 
 def minify():
-    kalkiminify.kalkiminify()
+    if check_appname():
+        kalkiminify.kalkiminify(appname)
+    else:
+        print('Appname do not exists.')
+        print("If the app exists, add the app to APP_NAME in settings.py")
 
 if __name__ == '__main__':
     try:
