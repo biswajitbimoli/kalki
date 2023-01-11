@@ -1,12 +1,25 @@
 import os
 import kalki.settings as settings
 import sys
-from kalki import service, kalkiminify
+try:
+    from kalki import kalkiminify
+except:
+    pass
+try:
+    from kalki import service
+except:
+    pass
+try:
+    from kalki import create_app
+except:
+    pass
+
+
 path = settings.kalki_path
 
 
 def startapp():
-    exec(open(os.path.join(path, "startapp.py")).read())
+    create_app.startapp()
 
 def compile():
     service.service()

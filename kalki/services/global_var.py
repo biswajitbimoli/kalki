@@ -47,7 +47,4 @@ class GlobalVar:
                 self.kalki_list_content.remove(i)
         
         
-        # file = open(os.path.join(self.kalki_path, 'kalki_global.py'), mode='w')
-        # file.write(kalki_global)
-        # file.close()
 GlobalVar().exec_kalki_global()
