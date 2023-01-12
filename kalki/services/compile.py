@@ -33,7 +33,8 @@ class Compile(global_var.GlobalVar):
         k_c = re.findall(r'.+', kalki_css)
         for i in k_c:
             l = i.strip()
-            self.kalkicss += '\n' + l
+            if l != '':
+                self.kalkicss += '\n' + l
         self.kalkicss = re.sub(r'\#.+','', self.kalkicss, re.MULTILINE)
         self.kalkicss = re.sub(r'\n\s*\n','\n',self.kalkicss,re.MULTILINE)
         
