@@ -5,7 +5,11 @@ import sys
 class StartApp:
     def __init__(self, appname):
         self.BASE_DIR = os.getcwd()
-        self.styles_path = os.path.join(self.BASE_DIR, 'styles')
+        if os.path.isfile(os.path.join(self.BASE_DIR, 'kalki/settings.py')):
+            from kalki import settings
+            self.styles_path = settings.styles_path
+        else:
+            self.styles_path = os.path.join(self.BASE_DIR, 'styles')
         self.appname = appname + '.kalki'
         self.app = appname
 
