@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import kalki.settings as settings
+from kalki.minify import minify_logic as ml
 
 class Minify:
     def __init__(self, appname):
@@ -22,11 +23,7 @@ class Minify:
             sys.exit()
 
     def remove_spaces(self):
-        new = self.content.replace(' ', '')
-        # new = re.sub(r'^/\*.\*/$', '', new)
-        new = new.split();
-        for i in new:
-            self.kalkicss += i
+        self.kalkicss = ml.MinifyLogic(self.content).minify_file()
         self.kalkicss += '\n/*created using kalki*/'
 
     def create_min_css(self):

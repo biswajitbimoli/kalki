@@ -10,6 +10,8 @@ class Compile(global_var.GlobalVar):
 
 
     def create_kalki_css(self):
+        
+        kalki_css = ''
 
         for i in self.kalki_list_content:
             a = len(i.split('@css'))
@@ -23,12 +25,15 @@ class Compile(global_var.GlobalVar):
                 css_all = ""
                 exec(code)
                 for l in css:
-                    s = l.strip()
-                    css_all += '\n' + s
+                    # s = l.strip()
+                    css_all += '\n' + l
                     i = css_all
 
-            self.kalkicss += i;
-        self.kalkicss = self.kalkicss.replace(' ', '')
+            kalki_css += i;
+        k_c = re.findall(r'.+', kalki_css)
+        for i in k_c:
+            l = i.strip()
+            self.kalkicss += '\n' + l
         self.kalkicss = re.sub(r'\#.+','', self.kalkicss, re.MULTILINE)
         self.kalkicss = re.sub(r'\n\s*\n','\n',self.kalkicss,re.MULTILINE)
         
