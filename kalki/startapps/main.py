@@ -51,8 +51,7 @@ APP_NAME = [
         except FileExistsError:
             print(f"App {file_name} already exists.")
             sys.exit()
-        kalki_content = """@kalki
-@global
+        kalki_content = """@kalki_global
 
 colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 
@@ -67,13 +66,13 @@ colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 for color in colors:
     @css
     .bg-{color} {{
-      background-color: {color};
+        background-color: {color};
     }}
     @endcss
 for color in colors:
     @css
     .text-{color} {{
-      color: {color};
+        color: {color};
     }}
     @endcss
 @endkalki

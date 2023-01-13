@@ -17,10 +17,13 @@ class Compile(global_var.GlobalVar):
             a = len(i.split('@css'))
             if a > 1:
                 code = i.replace('@css', 'style = f"""')
-                code = code.replace('@endcss', '"""; @endcss')
-                code = code.replace('${', '{{')
-                code = code.replace('}$', '}}')
-                code = code.replace('@endcss', "css.append(style)")
+                code = code.replace('@endcss', '"""; css.append(style)')
+                code = code.replace('{{', '$<')
+                code = code.replace('}}', '$>')
+                code = code.replace('{', '{{')
+                code = code.replace('}', '}}')
+                code = code.replace('$<', '{')
+                code = code.replace('$>', '}')
                 css = []
                 css_all = ""
                 exec(code)

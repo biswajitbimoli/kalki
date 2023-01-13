@@ -51,8 +51,8 @@ class GlobalVar:
 
         for i in self.kalki_list_content:
             a = i.strip()
-            if a.startswith('@global'):
-                a = a.replace('@global', '')
+            if a.startswith('_global'):
+                a = a.replace('_global', '')
                 kalki_global = a
                 self.kalki_list_content.remove(i)
         
