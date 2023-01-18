@@ -6,3 +6,4 @@ kalki/__pycache__/*
 */__pycache__/*
 */*/__pycache__
 kalki/settings.py
+settings.py

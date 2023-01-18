@@ -3,7 +3,7 @@ import os
 
 def startapp(appname):
     base = os.getcwd()
-    path = os.path.join(base, 'kalki/settings.py')
+    path = os.path.join(base, 'settings.py')
     if not os. path.isfile(path):
         main.StartApp(appname).create_settings()
         print("settings.py created successfully")

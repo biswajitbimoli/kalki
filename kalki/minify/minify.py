@@ -1,7 +1,7 @@
 import os
 import re
 import sys
-import kalki.settings as settings
+import settings
 from kalki.minify import minify_logic as ml
 
 class Minify:

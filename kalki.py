@@ -1,6 +1,6 @@
 import sys
 try:
-    import kalki.settings as settings
+    import settings
 except:
     pass
 try:

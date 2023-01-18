@@ -1,4 +1,4 @@
-import kalki.settings as settings
+import settings
 import os
 import sys
 import re

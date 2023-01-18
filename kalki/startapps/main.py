@@ -5,8 +5,8 @@ import sys
 class StartApp:
     def __init__(self, appname):
         self.BASE_DIR = os.getcwd()
-        if os.path.isfile(os.path.join(self.BASE_DIR, 'kalki/settings.py')):
-            from kalki import settings
+        if os.path.isfile(os.path.join(self.BASE_DIR, 'settings.py')):
+            import settings
             self.styles_path = settings.styles_path
         else:
             self.styles_path = os.path.join(self.BASE_DIR, 'styles')
@@ -14,7 +14,7 @@ class StartApp:
         self.app = appname
 
     def create_settings(self):
-        file_name = os.path.join(self.BASE_DIR, 'kalki/settings.py')
+        file_name = os.path.join(self.BASE_DIR, 'settings.py')
         try:
             create_settings_file = open(file_name, 'x')
             settings_content = f"""import os
@@ -65,15 +65,15 @@ colors = ['red', 'green', 'blue', 'purple', 'orange', 'black']
 @kalki
 for color in colors:
     @css
-    .bg-{color} {{
-        background-color: {color};
-    }}
+    .bg-{{color}} {
+        background-color: {{color}};
+    }
     @endcss
 for color in colors:
     @css
-    .text-{color} {{
-        color: {color};
-    }}
+    .text-{{color}} {
+        color: {{color}};
+    }
     @endcss
 @endkalki
 """
